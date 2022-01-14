@@ -66,7 +66,7 @@ impl Feature {
         opts.mode(RequestMode::Cors);
 
         let url = format!(
-            "wasm-pathfinder-data/features/feature_{}.json",
+            "wasm-osrs-pathfinder-data/features/feature_{}.json",
             &feature_key
         );
 

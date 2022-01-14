@@ -272,7 +272,7 @@ impl GlobalNodeContainer {
         opts.method("GET");
         opts.mode(RequestMode::Cors);
 
-        let url = "wasm-pathfinder-data/feature_table.json";
+        let url = "wasm-osrs-pathfinder-data/feature_table.json";
 
         let request = Request::new_with_str_and_init(url, &opts)?;
         request
@@ -302,7 +302,7 @@ impl GlobalNodeContainer {
         opts.method("GET");
         opts.mode(RequestMode::Cors);
 
-        let url = "wasm-pathfinder-data/feature_navigation.json";
+        let url = "wasm-osrs-pathfinder-data/feature_navigation.json";
 
         let request = Request::new_with_str_and_init(url, &opts)?;
         request
@@ -451,6 +451,7 @@ impl<'a> Astar {
                     duration: solution.len() as i32,
                     solution,
                     description: "description".to_string(),
+                    feature: self.feature.feature_name as i32,
                     id: -1,
                     image: "image_link".to_string(),
                     title: "title".to_string(),
@@ -509,6 +510,7 @@ pub struct AstarResult {
     id: i32,
     title: String,
     description: String,
+    feature: i32,
     image: String,
     duration: i32,
 }
